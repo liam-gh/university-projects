@@ -60,7 +60,7 @@ My final grade for this assignment resulted in 65% due to this.
 | Script | Purpose |
 |--------|---------|
 | `depth2-minimax.py` | My AI, which features a depth-2 minimax algorithm |
-| `level8_othello.py` | Entry point (main game script) |
+| `othello.py` | Entry point (main game script) |
 | `game_mechanics.py`| Handles the base game mechanics |
 | `human.py` | Handles the player's input |
 | `~/ai`| Example AI's provided by UKC | 
