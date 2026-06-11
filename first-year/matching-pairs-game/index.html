@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- page setup  -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Matching Pairs Game</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="pageLayout">
+      <!-- layout -->
+      <main class="app">
+        <!-- Title & instruction -->
+        <header class="intro cardish">
+          <h1>Matching Pairs Game</h1>
+          <p class="subtitle">Pick a board size, shuffle, start, then match equal ranks.</p>
+        </header>
+
+        <!-- controls and counters -->
+        <section class="panel cardish" aria-label="Setup controls">
+          <fieldset id="sizeFieldset">
+            <legend>Board size</legend>
+            <label class="sizeChoice"><input type="radio" name="boardSize" value="2" /> 2x4</label>
+            <label class="sizeChoice"><input type="radio" name="boardSize" value="4" /> 4x4</label>
+            <label class="sizeChoice"><input type="radio" name="boardSize" value="6" /> 6x4</label>
+          </fieldset>
+
+          <div id="controls" class="controls" hidden>
+            <button type="button" id="shuffleBtn" class="uiBtn">Shuffle</button>
+            <button type="button" id="startBtn" class="uiBtn uiBtnStrong">Start</button>
+          </div>
+
+          <div id="stats" class="stats" hidden>
+            <span class="chip">Time: <strong id="timerCount">0s</strong></span>
+            <span class="chip">Clicks: <strong id="clickCount">0</strong><span class="chip-dimmed" id="clickMax">/16</span></span>
+            <span class="chip">Pairs: <strong id="pairCount">0</strong><span class="chip-dimmed" id="pairMax">/4</span></span>
+          </div>
+        </section>
+
+        <!-- Board -->
+        <section class="boardWrap cardish">
+          <p id="boardPlaceholder" class="boardPlaceholder">Select a Board Size!</p>
+          <div id="board" class="board"></div>
+        </section>
+      </main>
+
+      <!-- Right panel -->
+      <aside class="accessibility cardish" aria-label="Accessibility and theme options">
+        <h2>Themes</h2>
+        <select id="themeSelect">
+          <option value="default">Default</option>
+          <option value="canterbury">Canterbury</option>
+          <option value="campus">Campus</option>
+          <option value="seaside">Seaside</option>
+          <option value="suits">Suits</option>
+        </select>
+
+        <h2 style="margin-top: 28px;">Accessibility</h2>
+        <label><input type="checkbox" id="toggleHighContrast" /> High contrast</label>
+        <label><input type="checkbox" id="toggleLargeText" /> Larger text</label>
+        <label><input type="checkbox" id="toggleReducedMotion" /> Reduced motion</label>
+        <label><input type="checkbox" id="toggleColorMode" /> Light mode</label>
+
+        <!-- photo creds -->
+        <div class="credits">
+          <p class="credits-title">Credits</p>
+          <p>Canterbury - <a href="https://pixabay.com/photos/cathedral-canterbury-world-heritage-1596044/" target="_blank">WolfBlur</a></p>
+          <p>Campus - <a href="https://www.facebook.com/photo/?fbid=1260843289414925&set=a.586637666835494" target="_blank">University of Kent</a></p>
+          <p>Seaside - <a href="https://pixabay.com/photos/sea-sky-natural-landscape-cloud-5213746/" target="_blank">SEIMORI-STUDIO</a></p>
+          <p>Suits - <a href="https://www.freepik.com/free-vector/flat-design-poker-table-background_88532213.htm#fromView=keyword&page=1&position=2&uuid=4a0d28ab-3cec-42bc-9fc1-2b4dc6ed098b&query=Red+poker" target="_blank">freepik</a></p>
+        </div>
+      </aside>
+    </div>
+
+    <!-- end game popup -->
+    <dialog id="gameOverDialog" class="cardish">
+      <p id="gameOverMessage" class="dialogMessage"></p>
+      <button type="button" id="playAgainBtn" class="uiBtn uiBtnStrong dialogBtn">Play again</button>
+    </dialog>
+
+    <!-- click anim -->
+    <div id="cursorFxLayer" aria-hidden="true"></div>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
