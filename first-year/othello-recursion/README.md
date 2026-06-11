@@ -11,7 +11,7 @@ Depth-2 Recursive Minimax Algorithm Implementation & Visual Improvements to the 
 
 ![Date](https://img.shields.io/badge/Date-5th%20December%202025-blue)
 
-</div>
+</div> 
 
 <div align="center">
 
